@@ -726,7 +726,9 @@ namespace F1toPCO.Model.F1 {
 
         private string uriField;
 
-        private short idField;
+        // Had to change from short to int, since we've passed the id range
+        // of 32,767 (short = 16 bits). 
+        private int idField;
 
         public status() {
             this.dateField = "0001-01-01T00:00:00";
@@ -788,7 +790,9 @@ namespace F1toPCO.Model.F1 {
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public short id {
+        // Had to change from short to int, since we've passed the id range
+        // of 32,767 (short = 16 bits). 
+        public int id {
             get {
                 return this.idField;
             }
